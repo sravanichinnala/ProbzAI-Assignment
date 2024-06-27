@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Interactive Chart with React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is an interactive chart application built with React.js. It allows users to visualize data with support for different timeframes (daily, weekly, and monthly). The data is displayed using the Recharts library.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Interactive chart with zoom and click events
+- Timeframe selection (daily, weekly, monthly)
+- Responsive design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ensure you have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/).
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/yourusername/my-chart-app.git
+   cd my-chart-app
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the dependencies:
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The application should open automatically in your default browser at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+### Timeframe Selection
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application allows you to select different timeframes for viewing the data. You can choose between daily, weekly, and monthly views by clicking the respective buttons.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Chart Interaction
 
-### Code Splitting
+The chart is interactive. You can hover over data points to see their values.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## File Descriptions
 
-### Analyzing the Bundle Size
+- `ChartComponent.js`: This component renders the chart using the Recharts library.
+- `Data.js`: This component fetches the data, handles timeframe selection, and passes the filtered data to `ChartComponent`.
+- `TimeframeSelector.js`: This component renders the buttons for selecting the timeframe.
+- `data/data.json`: This file contains the sample data in JSON format.
+- `App.js`: The main application component that integrates all other components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Data Format
 
-### Making a Progressive Web App
+The data is stored in `data/data.json` in the following format:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{
+  "jsonData": [
+    { "timestamp": "2023-01-01T00:00:00Z", "value": 10 },
+    { "timestamp": "2023-01-02T00:00:00Z", "value": 12 },
+    { "timestamp": "2023-01-03T00:00:00Z", "value": 15 },
+    { "timestamp": "2023-01-04T00:00:00Z", "value": 10 },
+    { "timestamp": "2023-01-08T00:00:00Z", "value": 60 },
+    { "timestamp": "2023-01-15T00:00:00Z", "value": 55 },
+    { "timestamp": "2023-02-01T00:00:00Z", "value": 10 },
+    { "timestamp": "2023-02-01T00:00:00Z", "value": 70 },
+    { "timestamp": "2023-03-01T00:00:00Z", "value": 90 }
+  ]
+}
+```
